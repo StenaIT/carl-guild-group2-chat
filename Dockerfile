@@ -1,18 +1,12 @@
 FROM node:latest
 
-# Create app directory
-ADD . /src
-COPY package.json /usr/src
-COPY index.js  /usr/src
-COPY index.html  /usr/src
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
-WORKDIR /usr/src
-
-# Install app dependencies
-COPY . /src
+COPY package.json /usr/src/app/
 RUN npm install
 
+COPY . /usr/src/app
 
 EXPOSE 8080
-
-CMD ["node", "/usr/src"]
+CMD [ "node", "index.js" ]
