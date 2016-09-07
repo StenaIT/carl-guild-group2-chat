@@ -1,20 +1,18 @@
-FROM node:argon
+FROM node:latest
 
 # Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+ADD . /src
+COPY package.json /usr/src
+COPY index.js  /usr/src
+COPY index.html  /usr/src
+
+WORKDIR /usr/src
 
 # Install app dependencies
-COPY package.json /usr/src/app/
-COPY index.html /usr/src/app/
-COPY index.js /usr/src/app/
-
-
+COPY . /src
 RUN npm install
 
-# Bundle app source
-COPY . /usr/src/app
 
 EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD ["node", "/usr/src"]
