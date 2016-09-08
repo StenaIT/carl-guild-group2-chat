@@ -9,6 +9,10 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/test', function(req, res){
+  res.sendFile(__dirname + '/public/test.html');
+});
+
 app.use(express.static(__dirname + '/public'));
 
 io.on('connection', function(socket){
