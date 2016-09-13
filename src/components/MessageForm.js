@@ -1,23 +1,27 @@
 import React, {PropTypes} from 'react';
 
 class MessageForm extends React.Component {
-	getInitialState() {
-		return {text: ''};
+	constructor() {
+		super();
+		this.text = '';
 	}
+	// getInitialState() {
+	// 	return {text: ''};
+	// }
 
 	handleSubmit(e) {
 		e.preventDefault();
 		let message = {
-			user : this.props.user,
-			text : this.state.text
+			user : this.user,
+			text : 'text'
 		};
 
 		this.props.onMessageSubmit(message);
-		this.setState({ text: '' });
+		// this.setState({ text: '' });
 	}
 
 	changeHandler(e) {
-		this.setState({ text : e.target.value });
+		// this.setState({ text : e.target.value });
 	}
 
 	render() {
@@ -27,7 +31,7 @@ class MessageForm extends React.Component {
 				<form onSubmit={this.handleSubmit}>
 					<input
 						onChange={this.changeHandler}
-						value={this.state.text}
+						value={this.text}
 					/>
 				</form>
 			</div>
@@ -37,7 +41,6 @@ class MessageForm extends React.Component {
 
 MessageForm.propTypes = {
 	user: PropTypes.string,
-	text: PropTypes.string,
 	onMessageSubmit: PropTypes.func
 };
 

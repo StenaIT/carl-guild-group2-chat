@@ -2,12 +2,17 @@ import React, {PropTypes} from 'react';
 import Message from './Message';
 
 class MessageList extends React.Component {
+	constructor() {
+		super();
+		this.messages = [];
+	}
+
 	render() {
 		return (
 			<div className="messages">
 				<h2> Conversation: </h2>
 				{
-					this.props.messages.map((message, i) => {
+					this.messages.map((message, i) => {
 						return (
 							<Message
 								key={i}
@@ -22,8 +27,8 @@ class MessageList extends React.Component {
 	}
 }
 
-MessageList.propTypes = {
-	messages: PropTypes.array
-};
+// MessageList.propTypes = {
+// 	messages: PropTypes.array
+// };
 
 export default MessageList;

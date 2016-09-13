@@ -12,8 +12,11 @@ const compiler = webpack(config);
 
 import server from 'http';
 const http = server.Server(app);
+
 import socket from 'socket.io';
 const io = socket(http);
+
+import chatSocket from './chatSocket';
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
@@ -32,16 +35,10 @@ app.get('/test', (req, res) => {
 
 app.use(express.static(__dirname + '/public'));
 
-io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
-  });
-});
+io.sockets.on('connection', chatSocket);
 
 app.listen(port, (err) => {
-  if (err) {
-    console.log(err);
-  } else {
+  if (!err) {
     open(`http://localhost:${port}`);
   }
 });
