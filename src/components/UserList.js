@@ -1,9 +1,9 @@
-var React = require('react');
+import React, {PropTypes} from 'react';
 
-var UsersList = React.createClass({
+class UsersList extends React.Component {
 	render() {
 		return (
-			<div className='users'>
+			<div className="users">
 				<h3> Online Users </h3>
 				<ul>
 					{
@@ -19,6 +19,10 @@ var UsersList = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = UserList;
+UsersList.propTypes = {
+  users: PropTypes.object.isRequired
+};
+
+export default UsersList;

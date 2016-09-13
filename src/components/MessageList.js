@@ -1,10 +1,10 @@
-var React = require('react');
-var Message = require('./Message');
+import React, {PropTypes} from 'react';
+import Message from './Message';
 
-var MessageList = React.createClass({
+class MessageList extends React.Component {
 	render() {
 		return (
-			<div className='messages'>
+			<div className="messages">
 				<h2> Conversation: </h2>
 				{
 					this.props.messages.map((message, i) => {
@@ -20,6 +20,10 @@ var MessageList = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = MessageList;
+MessageList.propTypes = {
+	messages: PropTypes.array
+};
+
+export default MessageList;
