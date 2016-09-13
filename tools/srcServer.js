@@ -23,8 +23,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('/', (req, res) => {
-  //res.sendFile(__dirname + '../src/index.html');
-  res.sendFile('/Users/nabrink/programming/javascript/carl-guild-group2-chat/src/index.html');
+  res.sendFile(path.join(__dirname, '../src', 'index.html'));
 });
 
 app.get('/test', (req, res) => {
