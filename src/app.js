@@ -31,6 +31,10 @@ io.on('connection', socket => {
 
     io.emit('message_received', message)
   });
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected!');
+  });
 });
 
 
