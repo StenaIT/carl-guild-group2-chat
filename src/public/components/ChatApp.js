@@ -1,18 +1,20 @@
 'use strict';
-import MessageList from './MessageList'
+import MessageList from './MessageList';
+import UserList from './UserList';
 
-let socket = null;
 
 class ChatApp extends React.Component {
 	constructor(props) {
 		super(props);
-		socket = io();
+		this.socket = io();
+
 		this.setupBindings();
 
 		this.state = {
 			messages: [],
 			inputMessage: '',
-			typing: false
+			typing: false,
+			users: []
 		}
 	}
 
@@ -25,9 +27,9 @@ class ChatApp extends React.Component {
 	}
 
 	componentDidMount() {
-		socket.on('init', this.initialize);
-		socket.on('message_received', this.messageReceived);
-		socket.on('user_connected', this.userConnected);
+		this.socket.on('init', this.initialize);
+		this.socket.on('message_received', this.messageReceived);
+		this.socket.on('user_connected', this.userConnected);
 	}
 
 	initialize(messages) {
@@ -35,7 +37,7 @@ class ChatApp extends React.Component {
 			messages: messages
 		});
 		console.log('Connected and initialized!');
-		socket.emit('register_user', this.props.user);
+		this.socket.emit('register_user', this.props.user);
 	}
 
 	userConnected(user) {
@@ -50,7 +52,7 @@ class ChatApp extends React.Component {
 	}
 
 	sendMessage() {
-		socket.emit('send_message', {
+		this.socket.emit('send_message', {
 			text: this.state.inputMessage,
 			user: this.props.user
 		});
@@ -67,10 +69,11 @@ class ChatApp extends React.Component {
 		return (
 			<div className="chatContainer">
 				<MessageList messages={this.state.messages} />
-				<form>
+				<UserList users={this.state.users} />
+				<div className="inputForm">
 					<input type="text" placeholder="Enter text" onChange={this.handleChange} value={this.state.message} />
-				</form>
-				<button onClick={this.sendMessage}>Send</button>
+					<button onClick={this.sendMessage}>Send</button>
+				</div>
 			</div>
 		);
 	}
