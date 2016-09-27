@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "prestart": "node_modules/.bin/babel src --presets es2015 --plugins transform-react-jsx --out-dir dist --copy-files",
+    "prestart": "node_modules/.bin/babel src --presets es2015 --plugins transform-react-jsx --out-dir dist --copy-files && browserify dist/public/index.js -o dist/public/bundle.js",
     "start": "node dist/app.js"
   },
   "repository": {
