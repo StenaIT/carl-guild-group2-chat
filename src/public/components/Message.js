@@ -6,8 +6,8 @@ class Message extends React.Component {
   render() {
     return (
       <div className="message">
-        <div className="user">{this.props.message.user}</div>
-        <div className="messageText">{this.props.message.text}</div>
+        <div className="user">{this.props.message.user}:</div>
+        <div className="messageText">- {this.props.message.text}</div>
       </div>
     );
   }

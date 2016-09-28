@@ -8,6 +8,7 @@ class MessageList extends React.Component {
   render() {
     return (
       <div className="messageList">
+          <div className="userNameHeader">{this.props.user}</div>
           {this.props.messages.map(messageItem => {
             return <Message message={messageItem} />;
           })}

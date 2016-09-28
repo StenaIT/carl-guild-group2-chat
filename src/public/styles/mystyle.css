@@ -1,10 +1,39 @@
-body {
-  background: #FFF;
-  color:#333;
-
-  font-size:12pt;
+* {
+    box-sizing: border-box;
 }
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#app {
+    height: 100%;
+}
+.chatContainer {
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+  background: #607D8B
+}
+.userNameHeader {
+  background-color: #12b7d5;
+  padding: 30px;
+  border-radius: 15px 0 0 0;
+  color: #fbfbfb;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-shadow: -1px -1px #0e8fa7;
+  text-transform: uppercase;
+  }
 
+.messageList {
+  width: 60%;
+  height: 90%;
+  background-color: #FFF;
+  float: left;
+  border-right: 1px solid #ccc;
+      border-radius: 15px 0px 0px 0px;
+}
 .message {
   display: block;
   width: 100%;
@@ -15,7 +44,7 @@ body {
 
 .message .user {
     color: #12B7D5;
-    font-size: 10pt;
+    font-size: 11px;
     text-transform: uppercase;
       font-family: sans-serif;
 
@@ -25,4 +54,89 @@ body {
     padding: 20px 0;
       font-family: sans-serif;
       color:#555;
+          font-style: italic;
+}
+
+
+.userList {
+    width: 40%;
+    background: #fbfbfb;
+    height: 90%;
+    float: left;
+        border-radius: 0px 15px 0px 0px;
+  }
+.inputForm {
+  height: 100px;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0 0 0;
+  box-sizing: border-box;
+  border-radius: 0 0 15px 15px;
+  border-top: 1px solid #CCC;
+  background: #f3f3f3;
+  }
+
+input[type="text"] {
+  height: 44px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0e8fa7;
+  border: 1px solid #CCC;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 90%;
+  margin: 20px 15px 0;
+}
+input[type="text"]:focus, .inputForm button:focus {
+    outline: none;
+}
+.inputForm button {
+    height: 44px;
+    width: 6%;
+    border: none;
+    background: #12b7d5;
+    color: #FFF;
+    text-transform: uppercase;
+  }
+
+
+  .registerForm {
+      width: 100%;
+      height: 100%;
+      background: #607D8B;
+      text-align: center;
+      display: block;
+  }
+
+  .registerForm input[type="text"] {
+    width: 60%;
+      float: left;
+      margin-left: 16%;
+}
+
+.formHolder {
+    margin: 20% 0;
+    width: 100%;
+    display: inline-block;
+}
+.submitButton {
+    height: 44px;
+    border: none;
+    width: 100px;
+    background: #12b7d5;
+    color: #FFF;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    float: left;
+    padding: 15px;
+    font-size: 11px;
+    margin: 20px 0px;
+  }
+  .registerHeader {
+    text-align: left;
+    margin-left: 16%;
+    font-family: sans-serif;
+    font-size: 11px;
+    color: #fff;
+    text-transform: uppercase;
 }

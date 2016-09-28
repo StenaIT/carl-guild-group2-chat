@@ -68,7 +68,7 @@ class ChatApp extends React.Component {
 	render() {
 		return (
 			<div className="chatContainer">
-				<MessageList messages={this.state.messages} />
+				<MessageList messages={this.state.messages} user={this.props.user} />
 				<UserList users={this.state.users} />
 				<div className="inputForm">
 					<input type="text" placeholder="Enter text" onChange={this.handleChange} value={this.state.message} />

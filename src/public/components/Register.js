@@ -23,8 +23,11 @@ class Register extends React.Component {
   render() {
     return (
       <div className="registerForm">
-        <input type="text" onChange={this.onUserNameChange} value={this.state.userName} />
-        <div className="submitButton" onClick={this.handleUserSubmit}>Join chat</div>
+        <div className="formHolder">
+        <div className="registerHeader">Enter your name to join the Chat Room</div>
+          <input type="text" onChange={this.onUserNameChange} value={this.state.userName} />
+          <div className="submitButton" onClick={this.handleUserSubmit}>Join chat</div>
+        </div>
       </div>
     );
   }
