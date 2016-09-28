@@ -9,13 +9,18 @@ class MessageList extends React.Component {
     return (
       <div className="messageList">
           <div className="userNameHeader">{this.props.user}</div>
+          <div className="messageScollpane">
           {this.props.messages.map(messageItem => {
             return <Message message={messageItem} />;
           })}
+          </div>
       </div>
     );
   }
 }
+
+
+
 
 MessageList.propTypes = {
   messages: React.PropTypes.array

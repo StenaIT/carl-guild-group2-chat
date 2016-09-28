@@ -8,9 +8,12 @@ class UserList extends React.Component {
   render() {
     return (
       <div className="userList">
-          {this.props.users.map(user => {
-            return <User userName={user} />;
-          })}
+      <div className="userListHeader ">Connected users</div>
+        <div className="userScollpane">
+            {this.props.users.map(user => {
+              return <User userName={user} />;
+            })}
+        </div>
       </div>
     );
   }

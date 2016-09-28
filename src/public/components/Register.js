@@ -8,6 +8,7 @@ class Register extends React.Component {
 
     this.onUserNameChange = this.onUserNameChange.bind(this);
     this.handleUserSubmit = this.handleUserSubmit.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   onUserNameChange(e) {
@@ -16,18 +17,31 @@ class Register extends React.Component {
     });
   }
 
+  handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      this.handleUserSubmit();
+    }
+  }
+
   handleUserSubmit() {
-    this.props.createUser(this.state.userName);
+    if (this.state.userName) {
+      this.props.createUser(this.state.userName);
+    }
   }
 
   render() {
     return (
       <div className="registerForm">
+
         <div className="formHolder">
         <div className="registerHeader">Enter your name to join the Chat Room</div>
-          <input type="text" onChange={this.onUserNameChange} value={this.state.userName} />
-          <div className="submitButton" onClick={this.handleUserSubmit}>Join chat</div>
+        <input type="text"
+          onChange={this.onUserNameChange}
+          onKeyPress={this.handleKeyPress}
+          value={this.state.userName} />
+        <div className="submitButton" onClick={this.handleUserSubmit}>Join chat</div>
         </div>
+
       </div>
     );
   }
