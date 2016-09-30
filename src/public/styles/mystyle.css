@@ -7,6 +7,10 @@ body, html {
   padding: 0;
   overflow: hidden;
 }
+html {
+  -webkit-text-size-adjust: none;
+}
+
 #app {
     height: 100%;
 }
@@ -16,6 +20,7 @@ body, html {
   padding: 50px 50px 100px;
   background: #607D8B
 }
+
 .userNameHeader, .userListHeader {
   background-color: #12b7d5;
   padding: 30px;
@@ -47,10 +52,10 @@ body, html {
 
       display: block;
 
-      -webkit-animation: fadeInFromNone 0.5s ease-in;
-      -moz-animation: fadeInFromNone 0.5s ease-in;
-      -o-animation: fadeInFromNone 0.5s ease-in;
-      animation: fadeInFromNone 0.5s ease-in;
+      -webkit-animation: fadeInFromNone 0.25s ease-out;
+      -moz-animation: fadeInFromNone 0.25s ease-out;
+      -o-animation: fadeInFromNone 0.25s ease-out;
+      animation: fadeInFromNone 0.25s ease-out;
 
 
 
@@ -146,6 +151,10 @@ input[type="text"]:focus, .inputForm button:focus {
     padding: 15px;
     font-size: 11px;
     margin: 20px 0px;
+
+    width: 60%;
+    float: left;
+    margin-left: 16%;
   }
   .registerHeader {
     text-align: left;
@@ -167,10 +176,6 @@ input[type="text"]:focus, .inputForm button:focus {
 
         display: block;
 
-        -webkit-animation: fadeInFromNone 0.5s ease-out;
-        -moz-animation: fadeInFromNone 0.5s ease-out;
-        -o-animation: fadeInFromNone 0.5s ease-out;
-        animation: fadeInFromNone 0.5s ease-out;
 
 
 
@@ -187,33 +192,74 @@ input[type="text"]:focus, .inputForm button:focus {
     0% {
         display: none;
         opacity: 0;
+        margin-left: 50px;
     }
 
     1% {
         display: block;
         opacity: 0;
+        margin-left: 50px;
     }
 
     100% {
         display: block;
         opacity: 1;
+        margin-left: 0px;
+
+
     }
 }
+
+
+@media screen and (max-width: 480px) {
+  .chatContainer {
+      padding: 10px 10px 100px;
+    }
+
+.userList {
+  display: none;
+}
+
+.messageList {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+.userNameHeader {
+    border-radius: 15px 15px 0 0;
+}
+.inputForm button {
+  width: 90%;
+  margin-top: 10px;
+  margin-left: 15px;
+  }
+  .inputForm {
+      height: 145px;
+    }
+}
+
+
+
+
+
+
 
 @-moz-keyframes fadeInFromNone {
     0% {
         display: none;
         opacity: 0;
+        margin-left: 50px;
     }
 
     1% {
         display: block;
         opacity: 0;
+        margin-left: 50px;
     }
 
     100% {
         display: block;
         opacity: 1;
+        margin-left: 0px;
     }
 }
 
@@ -221,16 +267,19 @@ input[type="text"]:focus, .inputForm button:focus {
     0% {
         display: none;
         opacity: 0;
+        margin-left: 50px;
     }
 
     1% {
         display: block;
         opacity: 0;
+        margin-left: 50px;
     }
 
     100% {
         display: block;
         opacity: 1;
+        margin-left: 0px;
     }
 }
 
@@ -238,15 +287,18 @@ input[type="text"]:focus, .inputForm button:focus {
     0% {
         display: none;
         opacity: 0;
+        margin-left: 50px;
     }
 
     1% {
         display: block;
         opacity: 0;
+        margin-left: 50px;
     }
 
     100% {
         display: block;
         opacity: 1;
+        margin-left: 0px;
     }
 }
