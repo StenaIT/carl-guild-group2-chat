@@ -47,10 +47,10 @@ body, html {
 
       display: block;
 
-      -webkit-animation: fadeInFromNone 0.5s ease-out;
-      -moz-animation: fadeInFromNone 0.5s ease-out;
-      -o-animation: fadeInFromNone 0.5s ease-out;
-      animation: fadeInFromNone 0.5s ease-out;
+      -webkit-animation: fadeInFromNone 0.5s ease-in;
+      -moz-animation: fadeInFromNone 0.5s ease-in;
+      -o-animation: fadeInFromNone 0.5s ease-in;
+      animation: fadeInFromNone 0.5s ease-in;
 
 
 

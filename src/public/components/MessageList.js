@@ -5,6 +5,11 @@ class MessageList extends React.Component {
     super(props);
   }
 
+  componentDidUpdate() {
+    jQuery(".messageScollpane").animate({scrollTop:jQuery(".messageScollpane").prop('scrollHeight')+jQuery(".messageScollpane").height()},0);
+
+  }
+
   render() {
     return (
       <div className="messageList">

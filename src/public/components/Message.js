@@ -3,10 +3,6 @@ class Message extends React.Component {
     super(props);
   }
 
-  componentDidMount () {
-    jQuery(".messageScollpane").animate({scrollTop:jQuery(".messageScollpane").height()*2},2000);
-  }
-
   render() {
     return (
       <div className="message">
